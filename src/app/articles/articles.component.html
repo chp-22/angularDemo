@@ -1,0 +1,36 @@
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top_seo">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="seoCon" placeholder="Search for...">
+        <span class="input-group-btn" (click)="onSeo()">
+          <button class="btn btn-default" type="button">搜索</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div>
+
+  <ul class="nav nav-pills top_nav">
+    <li [class]="activedNav==nav.name?'active':''" *ngFor="let nav of navs" (click)="onNav(nav)">
+      {{nav.name}}
+    </li>
+  </ul>
+
+  <div class="articles_content" id="articleCon">
+    <div *ngIf="activedNav == '文章'">
+      <app-article-list [articleData]="articles"></app-article-list>
+    </div>
+    <div *ngIf="activedNav == '书局'">
+      <app-books></app-books>
+    </div>
+    <div *ngIf="activedNav == '商城'">
+      <app-mall></app-mall>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+  </div>
+
+  <div class="add_btn" *ngIf="activedNav == '文章'" (click)="onAdd()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </div>
+  
+</div>

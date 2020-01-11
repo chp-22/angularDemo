@@ -1,0 +1,9 @@
+<div>
+
+  <div *ngFor="let item of articleData,index as order" class="article_box">
+    <div class="article_list" (click)="goDetail()"> 
+      <span [class]="order==0?'topOne':order==1?'topTwo':order==2?'topThree':''">{{order}}、</span> {{item.title}}
+    </div>
+  </div>
+  
+</div>
