@@ -1,0 +1,19 @@
+<div class="mall1">
+  <h2>多栏的瀑布流</h2>
+  <p>通过对数据进行定位，首先根据总宽和每个元素的宽度算出列数，然后遍历所有数据，把每条数据放到
+    相应的地方。首先看第一行，然后看哪一列高度最小，已该demo为例，第二列高度最小，所以就将第四条数据定位到第二列的
+    位置上，以此类推。。。
+  </p>
+  <div class="mall1_container">
+    <div *ngFor="let item of mallDatas">
+      <div class="item_box" >
+        <img [src]="item.img" alt="">
+        <p class="item_title">{{item.title}}</p>
+        <div class="item_bottom">
+          <span>{{item.author}}</span>
+          <span>{{item.date}}</span>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>

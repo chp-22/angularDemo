@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { UMeditorModule } from 'ngx-umeditor';
+import { TranHtmlPipe } from '../app/tranHtml.pipe';
+import { TestDirective } from '../app/test.directive';
+import { PipeModuleModule } from '../app/pipeModule/pipeModule.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +15,8 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { BooksComponent } from './books/books.component';
 import { MallComponent } from './mall/mall.component';
 import { ArticleListComponent } from './article-list/article-list.component';
+import { FuEditComponent } from './fu-edit/fu-edit.component';
+import { Mall1Component } from './mall1/mall1.component';
 
 @NgModule({
    declarations: [
@@ -21,12 +27,22 @@ import { ArticleListComponent } from './article-list/article-list.component';
       ArticleDetailComponent,
       BooksComponent,
       MallComponent,
-      ArticleListComponent
+      ArticleListComponent,
+      //TranHtmlPipe,
+      // TestDirective,
+      FuEditComponent,
+      Mall1Component
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
-      FormsModule
+      FormsModule,
+      UMeditorModule.forRoot(),
+      PipeModuleModule
+   ],
+   exports: [
+      //TranHtmlPipe
+      // TestDirective
    ],
    providers: [],
    bootstrap: [

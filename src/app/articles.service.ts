@@ -36,4 +36,32 @@ export class ArticlesService {
     return of(validData)
   }
 
+  // 获取文章详情
+  getDetail(id): Observable<Article[]> {
+    let detail = ARTICLES.filter((item) => item.id == id)
+    return of(detail)
+  }
+
+  // 新增一个文章
+  addArticle(article): Observable<Article[]> {
+    let allArticles = ARTICLES.concat(article)
+    console.log(allArticles)
+    return of(allArticles)
+  }
+
+  // 编辑一个文章
+  editArticle(article): Observable<Article[]> {
+    let idx = ARTICLES.findIndex((item) => item.id == article.id)
+    ARTICLES[idx] = article
+    console.log(ARTICLES)
+    return of(ARTICLES)
+  }
+
+  // 商城
+  getMallData(): Observable<Article[]> {
+    return of(ARTICLES)
+  }
+
+
+
 }

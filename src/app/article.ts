@@ -7,4 +7,5 @@ export class Article {
     date: Number;
     author: String;
     content: String;
+    positionCon: String;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ArticlesService } from '../articles.service';
 import { fromEvent } from 'rxjs';
@@ -33,11 +33,16 @@ export class ArticlesComponent implements OnInit {
     // 这是同步操作，但现实中从远端获取数据，必然是异步操作，所以写法要变,采用订阅的方式
     // this.articles = this.articlesService.getArticlesData() 
     this.getData()
+    console.log('文章列表页')
     
     let contentDiv = document.getElementById('articleCon')
     this.subscribeScroll = fromEvent(contentDiv, 'scroll') // fromEvent监听事件
             .subscribe((event) => this.windowScroll())
     
+  }
+
+  OnDestroy() {
+    this.subscribeScroll = {}
   }
 
   getData(): void { 
@@ -121,6 +126,10 @@ export class ArticlesComponent implements OnInit {
   // 导航点击事件
   onNav(val) {
     this.activedNav = val.name
+    if (val.name == '商城') {
+      // this.router.navigate(['/mall'])
+      this.router.navigate(['/mall1'])
+    }
     // this.router.navigate([val.navRoute])
     // this.listenRouteChange()
   }

@@ -18,8 +18,10 @@ export class ArticleListComponent implements OnInit {
     
   }
 
-  goDetail() {
-    this.router.navigate(['/articleDetail'])
+  goDetail(val) {
+    this.router.navigate(['/articleDetail', {
+      articleId: val
+    }])
   }
 
 }

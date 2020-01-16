@@ -1,0 +1,30 @@
+h2{
+    text-align: center;
+}
+.mall1_container{
+    width: 950px;
+    background-color: #EDECE8;
+    position: relative;
+}
+.item_box{
+    width: 300px;
+    margin-bottom: 14px;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    border: 1px solid #EDECE8;
+    box-sizing: border-box;
+}
+.item_title, .item_bottom{
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.item_box img{
+    width: 300px;
+    height: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+p{
+    margin: 0;
+}

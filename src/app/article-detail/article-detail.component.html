@@ -1,4 +1,7 @@
 <div>
+  <div class="detail_body">
+    <div [innerHTML]="articleDetail.content | tranHtml"></div>
+  </div>
 
   <div class="bottom_btns">
     <div class="bottom_btn" (click)="goBack()">返回</div>
