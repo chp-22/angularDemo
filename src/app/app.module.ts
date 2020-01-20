@@ -17,6 +17,7 @@ import { MallComponent } from './mall/mall.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { FuEditComponent } from './fu-edit/fu-edit.component';
 import { Mall1Component } from './mall1/mall1.component';
+import { MyComponentComponent } from './my-component/my-component.component';
 
 @NgModule({
    declarations: [
@@ -29,9 +30,10 @@ import { Mall1Component } from './mall1/mall1.component';
       MallComponent,
       ArticleListComponent,
       //TranHtmlPipe,
-      // TestDirective,
+      //TestDirective,
       FuEditComponent,
-      Mall1Component
+      Mall1Component,
+      MyComponentComponent
    ],
    imports: [
       BrowserModule,
@@ -41,8 +43,7 @@ import { Mall1Component } from './mall1/mall1.component';
       PipeModuleModule
    ],
    exports: [
-      //TranHtmlPipe
-      // TestDirective
+      //TranHtmlPipe\r\n//TestDirective
    ],
    providers: [],
    bootstrap: [
